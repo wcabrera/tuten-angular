@@ -1,0 +1,32 @@
+
+<!-- <mat-toolbar color="primary" class="example-toolbar"> -->
+    <button (click)="onClickSalir()" >Salir</button>
+  
+  <!-- </mat-toolbar> -->
+
+<!-- <mat-form-field > -->
+    <input  [(ngModel)]="busqueda"   (ngModelChange)="onChange($event)" placeholder="Escribe un BookingID o un Precio" style="width: 100%">
+  <!-- </mat-form-field> -->
+  
+<table class="table-fill" style="width: 100%">
+  <thead style="width: 100%">
+    <tr>
+
+        <th>BookingId</th>
+        <th style="">Cliente</th>
+        <th> Fecha de Creación </th>
+        <th>Direcciónes</th>
+        <th>Precio</th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let s of booking; let j = index">
+      <tr>
+        <td class="texto-tablas" [innerHTML]="s.bookingId"></td>
+        <td class="texto-tablas" [innerHTML]="s.cliente"></td>
+        <td class="texto-tablas" [innerHTML]="s.bookingTime"></td>
+        <td class="texto-tablas" [innerHTML]="s.streetAddress"></td>
+        <td class="texto-tablas" [innerHTML]="s.bookingPrice"></td>
+      </tr>
+     
+  </tbody>
+</table>
